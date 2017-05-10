@@ -1,0 +1,17 @@
+{
+  "name": "Dating",
+  "version": "1.0.0",
+  "description": "A real-time web chat for FAKKU Dating, forked from Yiffspot.",
+  "keywords": [
+    "Chat"
+  ],
+  "author": "Taylor Locke <kisuka@kisuka.com>",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.*",
+    "socket.io": "^1.4.*",
+    "string": "~3.0.0",
+    "jade": "~1.9.1"
+  }
+}

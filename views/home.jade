@@ -1,0 +1,170 @@
+doctype html
+html(class='no-js', lang='en-US')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    meta(name='description', content='FAKKU dating service.')
+    meta(name='keywords', content='FAKKU, Hentai, Dating, Love')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    title= pageTitle
+
+    link(rel='author', href='/humans.txt' type='text/plain')
+    link(rel='shortcut icon', href='/assets/img/favicon.ico' type='image/x-icon')
+
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css')
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto')
+    link(rel='stylesheet', href='/assets/css/style.css?v=21')
+    link(rel='stylesheet', href='/assets/css/flags.min.css')
+  body(id="body")
+    | <!--[if lt IE 8]>
+    |   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    | <![endif]-->
+    div(class="overlay")
+      | Finding Partner
+    div(class='page-wrap')
+
+      div(class='container-fluid')
+        div(id='settings' class='row')
+          img(src='/assets/img/fakku-dating-03.png' id='landing-image')
+          div(class='select-options col-sm-5')
+            div(class='logo')
+              img(src='assets/img/fakku-dating-logo.png' alt='FAKKU Dating')
+  
+            form(id='userSettings', action='/', method='post', role='form')
+              input#userAvatar(type='hidden', name='userAvatar')
+              
+              div(class='row')
+                div(class='col-sm-12')
+                  label I am a
+                  p(id='userGenderParent')
+                    select(name='userGender', id='userGender', class='form-control selectpicker input-sm')
+                      option(value='') Select Gender
+                        for gender in genders
+                          option #{gender}
+  
+               div(class='row')
+                div(class='col-sm-12')
+                  label That likes
+                  select(name='userKinks[]', id='userKinks', class='form-control selectpicker input-sm', multiple='multiple')
+                    option(value='any' selected='selected') Any / All
+                      each key, kink in kinks
+                        option(value='#{kink}') #{key}
+  
+              div(class='row')
+                div(class='col-sm-12')
+                  label Looking for
+                  select(name='partnerGender[]', id='partnerGender', class='form-control selectpicker input-sm', multiple='multiple')
+                    option(value='any' selected='selected') Any / All
+                    for gender in genders
+                      option #{gender}
+  
+               div(class='row')
+                div(class='col-sm-12')
+                  button(type='submit' class='btn btn-primary btn-block btn-lg') Find Love
+
+              div(class='row credit')
+                div(class='col-sm-12')
+                   p(class='powered-by')
+                    | Want to read the best uncensored English <a target="_blank" href="https://www.fakku.net/">hentai</a>? Check out our main website: <a target="_blank" href="https://www.fakku.net">https://www.fakku.net</a>.
+                    | You must be 18 years or older to use this website.
+
+       div(id='avatar' class='row')
+         div(class='col-sm-offset-3 col-sm-6')
+           h1(class='select-avatar-h1')
+            | Please select your avatar.
+
+           button(id='findLove' type='button' class='btn btn-primary btn-block btn-lg margin-bottom') Continue
+
+           .my-flipster
+             ul
+               li
+                 img(src='/assets/img/characters/avatar-00.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-01.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-02.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-03.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-04.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-05.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-06.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-07.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-08.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-09.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-010.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-011.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-012.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-013.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-014.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-015.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-016.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-017.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-018.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-019.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-020.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-021.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-022.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-023.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-024.jpg')
+               li
+                 img(src='/assets/img/characters/avatar-025.jpg')
+
+        div(class='row' id='chat')
+          div(class='col-sm-3 text-center avatars' id='avatar-you')
+            h1(class='name-label') You
+            p(id='userAvatarImg')
+            h1(class='name-label')
+              | Likes
+            ul(id='userKinkTags')
+          div(class='col-sm-6' id='chat-window')
+            ul(id='messages' class='list-unstyled')
+              li(id='typing' class='message message-system') Your partner is typing...
+  
+            form(action='', id='messageBox', role='form')
+              input(name='message', id='message', type='text' class='form-control', placeholder='Enter your message...', autocomplete='off', required='required')
+          div(class='col-sm-3 text-center avatars'  id='avatar-partner')
+            h1(class='name-label') Partner
+            p(id='partnerAvatarImg')
+              | Pending...
+            p
+              button(id='newPartner' type='button' class='btn btn-default btn-block btn-lg') Find New Partner
+            h1(class='name-label')
+              | Likes
+            ul(id='partnerKinks')
+            
+      script(src='/assets/js/socket.io-1.4.5.js')
+      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+      script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+      script(src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js')
+      script(src='/assets/js/jquery.titlealert.js')
+      script(src='/assets/js/jquery.spin.js')
+      script(src='/assets/js/script.js?v=25')
+      script(src='/assets/js/jquery.flipster.min.js')
+      script.
+        var kinks = !{JSON.stringify(kinks)};
+      script.
+        var country = "#{country}";
